@@ -32,15 +32,17 @@ function validarCampoEmail(): boolean {
 }
 
 function validarCampoTelefone(): boolean {
-    if (campoTelefone) {
-        const valorDigitado = campoTelefone.value.replace(/\D/g, '');
-        if (valorDigitado.length < 10 || valorDigitado.length > 11) {
-            alert('Telefone inválido! Deve conter entre 10 e 11 dígitos.');
-            return false;
-        }
-    }
-    return true;
+  if (campoTelefone) {
+      campoTelefone.value = campoTelefone.value.replace(/\D/g, '');
+      const valorDigitado = campoTelefone.value;
+      if (valorDigitado.length < 10 || valorDigitado.length > 11) {
+          alert('Telefone inválido! Deve conter entre 10 e 11 dígitos.');
+          return false;
+      }
+  }
+  return true;
 }
+
 
 function validarCampoDataNascimento(): boolean {
     if (campoDataNascimento && campoDataNascimento.value === '') {
