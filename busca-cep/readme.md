@@ -14,7 +14,7 @@ Este é um formulário de cadastro que utiliza a API do ViaCEP para buscar autom
 2. **Navegue até a Pasta do Projeto**:
 
    ```sh
-   cd formulario-validacao-dom
+   cd busca-cep
    ```
 
 3. **Instale as Dependências:**:
