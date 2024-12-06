@@ -1,0 +1,28 @@
+<div class="home-container">
+  <div class="user-info">
+    <div class="user-header">
+      <img [src]="getUserImage(user?.image)" alt="Foto do usuário" *ngIf="user" />
+      <div>
+        <h2>Bem-vindo, {{ capitalizeFirstLetter(user?.name) }}</h2>
+        <p class="username">{{ capitalizeFirstLetter(user?.username) }}</p>
+      </div>
+    </div>
+    <p class="score">Pontuação: <span>{{ user?.score }}</span></p>
+  </div>
+
+  <div class="user-list">
+    <h2>Lista de Jogadores</h2>
+    <ul>
+      <li *ngFor="let otherUser of users">
+        <div class="user-item">
+          <img [src]="getUserImage(otherUser.image)" alt="Foto de {{ otherUser.name }}" />
+          <div>
+            <p>{{ capitalizeFirstLetter(otherUser.name) }}</p>
+            <p class="username">{{ capitalizeFirstLetter(otherUser.username) }}</p>
+            <p class="score">Pontuação: <span>{{ otherUser.score }}</span></p>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

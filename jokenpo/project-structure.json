@@ -1,0 +1,400 @@
+{
+  "projectName": "jokenpo",
+  "generatedAt": "2024-12-06T17:26:08.973Z",
+  "root": {
+    "type": "directory",
+    "name": "jokenpo",
+    "path": "",
+    "ignored": false,
+    "children": [
+      {
+        "type": "directory",
+        "name": ".angular",
+        "path": ".angular",
+        "ignored": true
+      },
+      {
+        "type": "file",
+        "name": ".editorconfig",
+        "path": ".editorconfig",
+        "content": "# Editor configuration, see https://editorconfig.org\r\nroot = true\r\n\r\n[*]\r\ncharset = utf-8\r\nindent_style = space\r\nindent_size = 2\r\ninsert_final_newline = true\r\ntrim_trailing_whitespace = true\r\n\r\n[*.ts]\r\nquote_type = single\r\nij_typescript_use_double_quotes = false\r\n\r\n[*.md]\r\nmax_line_length = off\r\ntrim_trailing_whitespace = false\r\n"
+      },
+      {
+        "type": "file",
+        "name": ".gitignore",
+        "path": ".gitignore",
+        "ignored": true
+      },
+      {
+        "type": "directory",
+        "name": ".vscode",
+        "path": ".vscode",
+        "ignored": true
+      },
+      {
+        "type": "file",
+        "name": "a.js",
+        "path": "a.js",
+        "ignored": true
+      },
+      {
+        "type": "file",
+        "name": "angular.json",
+        "path": "angular.json",
+        "content": "{\r\n  \"$schema\": \"./node_modules/@angular/cli/lib/config/schema.json\",\r\n  \"version\": 1,\r\n  \"newProjectRoot\": \"projects\",\r\n  \"projects\": {\r\n    \"jokenpo\": {\r\n      \"projectType\": \"application\",\r\n      \"schematics\": {\r\n        \"@schematics/angular:component\": {\r\n          \"style\": \"scss\"\r\n        }\r\n      },\r\n      \"root\": \"\",\r\n      \"sourceRoot\": \"src\",\r\n      \"prefix\": \"app\",\r\n      \"architect\": {\r\n        \"build\": {\r\n          \"builder\": \"@angular-devkit/build-angular:application\",\r\n          \"options\": {\r\n            \"outputPath\": \"dist/jokenpo\",\r\n            \"index\": \"src/index.html\",\r\n            \"browser\": \"src/main.ts\",\r\n            \"polyfills\": [\r\n              \"zone.js\"\r\n            ],\r\n            \"tsConfig\": \"tsconfig.app.json\",\r\n            \"inlineStyleLanguage\": \"scss\",\r\n            \"assets\": [\r\n              {\r\n                \"glob\": \"**/*\",\r\n                \"input\": \"public\"\r\n              }\r\n            ],\r\n            \"styles\": [\r\n              \"src/styles.scss\"\r\n            ],\r\n            \"scripts\": []\r\n          },\r\n          \"configurations\": {\r\n            \"production\": {\r\n              \"budgets\": [\r\n                {\r\n                  \"type\": \"initial\",\r\n                  \"maximumWarning\": \"500kB\",\r\n                  \"maximumError\": \"1MB\"\r\n                },\r\n                {\r\n                  \"type\": \"anyComponentStyle\",\r\n                  \"maximumWarning\": \"2kB\",\r\n                  \"maximumError\": \"4kB\"\r\n                }\r\n              ],\r\n              \"outputHashing\": \"all\"\r\n            },\r\n            \"development\": {\r\n              \"optimization\": false,\r\n              \"extractLicenses\": false,\r\n              \"sourceMap\": true\r\n            }\r\n          },\r\n          \"defaultConfiguration\": \"production\"\r\n        },\r\n        \"serve\": {\r\n          \"options\": {\r\n            \"proxyConfig\": \"proxy.conf.json\"\r\n            },\r\n          \"builder\": \"@angular-devkit/build-angular:dev-server\",\r\n          \"configurations\": {\r\n            \"production\": {\r\n              \"buildTarget\": \"jokenpo:build:production\"\r\n            },\r\n            \"development\": {\r\n              \"buildTarget\": \"jokenpo:build:development\"\r\n            }\r\n          },\r\n          \"defaultConfiguration\": \"development\"\r\n        },\r\n        \"extract-i18n\": {\r\n          \"builder\": \"@angular-devkit/build-angular:extract-i18n\"\r\n        },\r\n        \"test\": {\r\n          \"builder\": \"@angular-devkit/build-angular:karma\",\r\n          \"options\": {\r\n            \"polyfills\": [\r\n              \"zone.js\",\r\n              \"zone.js/testing\"\r\n            ],\r\n            \"tsConfig\": \"tsconfig.spec.json\",\r\n            \"inlineStyleLanguage\": \"scss\",\r\n            \"assets\": [\r\n              {\r\n                \"glob\": \"**/*\",\r\n                \"input\": \"public\"\r\n              }\r\n            ],\r\n            \"styles\": [\r\n              \"src/styles.scss\"\r\n            ],\r\n            \"scripts\": []\r\n          }\r\n        }\r\n      }\r\n    }\r\n  }\r\n}\r\n"
+      },
+      {
+        "type": "file",
+        "name": "b2.js",
+        "path": "b2.js",
+        "ignored": true
+      },
+      {
+        "type": "directory",
+        "name": "node_modules",
+        "path": "node_modules",
+        "ignored": true
+      },
+      {
+        "type": "file",
+        "name": "package-lock.json",
+        "path": "package-lock.json",
+        "ignored": true
+      },
+      {
+        "type": "file",
+        "name": "package.json",
+        "path": "package.json",
+        "content": "{\r\n  \"name\": \"jokenpo\",\r\n  \"version\": \"0.0.0\",\r\n  \"scripts\": {\r\n    \"ng\": \"ng\",\r\n    \"start\": \"ng serve\",\r\n    \"build\": \"ng build\",\r\n    \"watch\": \"ng build --watch --configuration development\",\r\n    \"test\": \"ng test\"\r\n  },\r\n  \"private\": true,\r\n  \"dependencies\": {\r\n    \"@angular/animations\": \"^18.2.0\",\r\n    \"@angular/common\": \"^18.2.13\",\r\n    \"@angular/compiler\": \"^18.2.0\",\r\n    \"@angular/core\": \"^18.2.0\",\r\n    \"@angular/forms\": \"^18.2.13\",\r\n    \"@angular/platform-browser\": \"^18.2.13\",\r\n    \"@angular/platform-browser-dynamic\": \"^18.2.13\",\r\n    \"@angular/router\": \"^18.2.0\",\r\n    \"rxjs\": \"~7.8.0\",\r\n    \"tslib\": \"^2.3.0\",\r\n    \"zone.js\": \"~0.14.10\"\r\n  },\r\n  \"devDependencies\": {\r\n    \"@angular-devkit/build-angular\": \"^18.2.11\",\r\n    \"@angular/cli\": \"^18.2.11\",\r\n    \"@angular/compiler-cli\": \"^18.2.0\",\r\n    \"@types/jasmine\": \"~5.1.0\",\r\n    \"jasmine-core\": \"~5.2.0\",\r\n    \"karma\": \"~6.4.0\",\r\n    \"karma-chrome-launcher\": \"~3.2.0\",\r\n    \"karma-coverage\": \"~2.2.0\",\r\n    \"karma-jasmine\": \"~5.1.0\",\r\n    \"karma-jasmine-html-reporter\": \"~2.1.0\",\r\n    \"typescript\": \"~5.5.2\"\r\n  }\r\n}\r\n"
+      },
+      {
+        "type": "file",
+        "name": "proxy.conf.json",
+        "path": "proxy.conf.json",
+        "content": "{\r\n  \"/api\": {\r\n    \"target\": \"http://localhost:3000\",\r\n    \"secure\": false,\r\n    \"changeOrigin\": true,\r\n    \"pathRewrite\": {\r\n      \"^/api\": \"\"\r\n    }\r\n  }\r\n}\r\n"
+      },
+      {
+        "type": "directory",
+        "name": "public",
+        "path": "public",
+        "ignored": false,
+        "children": [
+          {
+            "type": "file",
+            "name": "favicon.ico",
+            "path": "public\\favicon.ico",
+            "ignored": true
+          },
+          {
+            "type": "file",
+            "name": "logo.png",
+            "path": "public\\logo.png",
+            "ignored": true
+          }
+        ]
+      },
+      {
+        "type": "file",
+        "name": "README.md",
+        "path": "README.md",
+        "content": "# Jokenpo\r\n\r\nThis project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.11.\r\n\r\n## Development server\r\n\r\nRun `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.\r\n\r\n## Code scaffolding\r\n\r\nRun `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.\r\n\r\n## Build\r\n\r\nRun `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.\r\n\r\n## Running unit tests\r\n\r\nRun `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).\r\n\r\n## Running end-to-end tests\r\n\r\nRun `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.\r\n\r\n## Further help\r\n\r\nTo get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.\r\n"
+      },
+      {
+        "type": "directory",
+        "name": "src",
+        "path": "src",
+        "ignored": false,
+        "children": [
+          {
+            "type": "directory",
+            "name": "app",
+            "path": "src\\app",
+            "ignored": false,
+            "children": [
+              {
+                "type": "file",
+                "name": "app.component.html",
+                "path": "src\\app\\app.component.html",
+                "content": "<app-header></app-header>\r\n<router-outlet></router-outlet>\r\n"
+              },
+              {
+                "type": "file",
+                "name": "app.component.scss",
+                "path": "src\\app\\app.component.scss",
+                "content": ""
+              },
+              {
+                "type": "file",
+                "name": "app.component.spec.ts",
+                "path": "src\\app\\app.component.spec.ts",
+                "content": "import { TestBed } from '@angular/core/testing';\r\nimport { AppComponent } from './app.component';\r\n\r\ndescribe('AppComponent', () => {\r\n  beforeEach(async () => {\r\n    await TestBed.configureTestingModule({\r\n      imports: [AppComponent],\r\n    }).compileComponents();\r\n  });\r\n\r\n  it('should create the app', () => {\r\n    const fixture = TestBed.createComponent(AppComponent);\r\n    const app = fixture.componentInstance;\r\n    expect(app).toBeTruthy();\r\n  });\r\n\r\n  it(`should have the 'jokenpo' title`, () => {\r\n    const fixture = TestBed.createComponent(AppComponent);\r\n    const app = fixture.componentInstance;\r\n    expect(app.title).toEqual('jokenpo');\r\n  });\r\n\r\n  it('should render title', () => {\r\n    const fixture = TestBed.createComponent(AppComponent);\r\n    fixture.detectChanges();\r\n    const compiled = fixture.nativeElement as HTMLElement;\r\n    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, jokenpo');\r\n  });\r\n});\r\n"
+              },
+              {
+                "type": "file",
+                "name": "app.component.ts",
+                "path": "src\\app\\app.component.ts",
+                "content": "import { Component, OnInit } from '@angular/core';\r\nimport { AuthService } from './services/auth.service';\r\nimport { RouterOutlet } from '@angular/router';\r\nimport { HeaderComponent } from './header/header.component';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  standalone: true,\r\n  imports: [RouterOutlet, HeaderComponent],\r\n  templateUrl: './app.component.html',\r\n  styleUrl: './app.component.scss'\r\n})\r\n\r\nexport class AppComponent implements OnInit {\r\n  title = 'jokenpo';\r\n  constructor(private authService: AuthService) {}\r\n\r\n  ngOnInit(): void {\r\n    this.authService.validateToken().subscribe((isValid) => {\r\n      if (!isValid) {\r\n        console.log('Token inválido ou expirado!');\r\n      }\r\n    });\r\n  }\r\n}\r\n"
+              },
+              {
+                "type": "file",
+                "name": "app.config.ts",
+                "path": "src\\app\\app.config.ts",
+                "content": "import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';\r\nimport { provideRouter } from '@angular/router';\r\nimport { provideHttpClient, withInterceptors} from '@angular/common/http';\r\nimport { routes } from './app.routes';\r\nimport { authInterceptor } from './interceptors/auth.interceptor';\r\n\r\n\r\nexport const appConfig: ApplicationConfig = {\r\n  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes), provideHttpClient(withInterceptors([authInterceptor])),]\r\n};\r\n"
+              },
+              {
+                "type": "file",
+                "name": "app.routes.ts",
+                "path": "src\\app\\app.routes.ts",
+                "content": "import { Routes } from '@angular/router';\r\nimport { RegisterComponent } from './pages/register/register.component';\r\nimport { LoginComponent } from './pages/login/login.component';\r\nimport { AuthGuard } from './guards/auth.guard';\r\nimport { HomeComponent } from './pages/home/home.component';\r\n\r\nexport const routes: Routes = [\r\n  { path: '', redirectTo: 'register', pathMatch: 'full' },\r\n  { path: 'register', component: RegisterComponent },\r\n  { path: 'login', component: LoginComponent },\r\n  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },\r\n];\r\n"
+              },
+              {
+                "type": "directory",
+                "name": "guards",
+                "path": "src\\app\\guards",
+                "ignored": false,
+                "children": [
+                  {
+                    "type": "file",
+                    "name": "auth.guard.spec.ts",
+                    "path": "src\\app\\guards\\auth.guard.spec.ts",
+                    "content": "import { TestBed } from '@angular/core/testing';\r\nimport { CanActivateFn } from '@angular/router';\r\n\r\nimport { authGuard } from './auth.guard';\r\n\r\ndescribe('authGuard', () => {\r\n  const executeGuard: CanActivateFn = (...guardParameters) => \r\n      TestBed.runInInjectionContext(() => authGuard(...guardParameters));\r\n\r\n  beforeEach(() => {\r\n    TestBed.configureTestingModule({});\r\n  });\r\n\r\n  it('should be created', () => {\r\n    expect(executeGuard).toBeTruthy();\r\n  });\r\n});\r\n"
+                  },
+                  {
+                    "type": "file",
+                    "name": "auth.guard.ts",
+                    "path": "src\\app\\guards\\auth.guard.ts",
+                    "content": "import { Injectable } from '@angular/core';\r\nimport { CanActivate, Router } from '@angular/router';\r\nimport { AuthService } from '../services/auth.service';\r\nimport { Observable } from 'rxjs';\r\nimport { map } from 'rxjs/operators';\r\n\r\n@Injectable({\r\n  providedIn: 'root',\r\n})\r\nexport class AuthGuard implements CanActivate {\r\n  constructor(private authService: AuthService, private router: Router) {}\r\n\r\n  canActivate(): Observable<boolean> {\r\n    return this.authService.validateToken().pipe(\r\n      map((isValid) => {\r\n        if (!isValid) {\r\n          alert('Sessão expirada! Faça login novamente.');\r\n          this.router.navigate(['/login']);\r\n        }\r\n        return isValid;\r\n      }),\r\n    );\r\n  }\r\n}\r\n"
+                  }
+                ]
+              },
+              {
+                "type": "directory",
+                "name": "header",
+                "path": "src\\app\\header",
+                "ignored": false,
+                "children": [
+                  {
+                    "type": "file",
+                    "name": "header.component.html",
+                    "path": "src\\app\\header\\header.component.html",
+                    "content": "<nav class=\"header-container\">\r\n  <div class=\"logo\" >\r\n    <a [routerLink]=\"['/home']\">\r\n      <img src=\"logo.png\" alt=\"Logo da Plataforma\" />\r\n    </a>\r\n\r\n    <a [routerLink]=\"['/home']\" class=\"platform-name\">Jokenpô Arena</a>\r\n  </div>\r\n  <div class=\"user-actions\">\r\n    <button *ngIf=\"authService.getToken()\" class=\"logout-btn\" (click)=\"logout()\">Logout</button>\r\n    <button *ngIf=\"!authService.getToken()\" class=\"login-btn\" (click)=\"login()\">Login</button>\r\n    <button *ngIf=\"!authService.getToken()\" class=\"register-btn\" (click)=\"register()\">Cadastro</button>\r\n  </div>\r\n</nav>\r\n"
+                  },
+                  {
+                    "type": "file",
+                    "name": "header.component.scss",
+                    "path": "src\\app\\header\\header.component.scss",
+                    "content": ".header-container {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  padding: 0.5rem 1rem;\r\n  background-color: #1a1a2e;\r\n  color: white;\r\n  font-family: 'Arial', sans-serif;\r\n\r\n  a {\r\n    text-decoration: none;\r\n    color: inherit;\r\n  }\r\n\r\n  .logo {\r\n    display: flex;\r\n    align-items: center;\r\n\r\n    img {\r\n      height: 40px;\r\n      margin-right: 10px;\r\n    }\r\n\r\n    .platform-name {\r\n      font-size: 1.5rem;\r\n      font-weight: bold;\r\n      color: #ffcc00;\r\n    }\r\n  }\r\n\r\n  .user-actions {\r\n    display: flex;\r\n    align-items: center;\r\n\r\n    .logout-btn,\r\n    .login-btn {\r\n      background-color: #ff4c4c;\r\n      border: none;\r\n      color: white;\r\n      font-weight: bold;\r\n      padding: 0.5rem 1rem;\r\n      border-radius: 5px;\r\n      cursor: pointer;\r\n      transition: background-color 0.3s;\r\n\r\n      &:hover {\r\n        background-color: #cc0000;\r\n      }\r\n    }\r\n\r\n    .login-btn {\r\n      background-color: #4caf50;\r\n\r\n      &:hover {\r\n        background-color: #388e3c;\r\n      }\r\n    }\r\n  }\r\n\r\n  .register-btn {\r\n    background-color: #007bff; /* Azul para o botão de cadastro */\r\n    border: none;\r\n    color: white;\r\n    font-weight: bold;\r\n    padding: 0.5rem 1rem;\r\n    border-radius: 5px;\r\n    cursor: pointer;\r\n    transition: background-color 0.3s;\r\n    margin-left: 10px;\r\n\r\n    &:hover {\r\n      background-color: #0056b3;\r\n    }\r\n\r\n    &:active {\r\n      background-color: #003f7f;\r\n    }\r\n  }\r\n\r\n}\r\n"
+                  },
+                  {
+                    "type": "file",
+                    "name": "header.component.spec.ts",
+                    "path": "src\\app\\header\\header.component.spec.ts",
+                    "content": "import { ComponentFixture, TestBed } from '@angular/core/testing';\r\n\r\nimport { HeaderComponent } from './header.component';\r\n\r\ndescribe('HeaderComponent', () => {\r\n  let component: HeaderComponent;\r\n  let fixture: ComponentFixture<HeaderComponent>;\r\n\r\n  beforeEach(async () => {\r\n    await TestBed.configureTestingModule({\r\n      imports: [HeaderComponent]\r\n    })\r\n    .compileComponents();\r\n\r\n    fixture = TestBed.createComponent(HeaderComponent);\r\n    component = fixture.componentInstance;\r\n    fixture.detectChanges();\r\n  });\r\n\r\n  it('should create', () => {\r\n    expect(component).toBeTruthy();\r\n  });\r\n});\r\n"
+                  },
+                  {
+                    "type": "file",
+                    "name": "header.component.ts",
+                    "path": "src\\app\\header\\header.component.ts",
+                    "content": "import { Component } from '@angular/core';\r\nimport { AuthService } from '../services/auth.service';\r\nimport { Router } from '@angular/router';\r\nimport { CommonModule } from '@angular/common';\r\nimport { RouterModule } from '@angular/router';\r\n\r\n\r\n@Component({\r\n  standalone: true,\r\n  selector: 'app-header',\r\n  templateUrl: './header.component.html',\r\n  imports: [CommonModule, RouterModule],\r\n  styleUrl: './header.component.scss'\r\n})\r\n\r\nexport class HeaderComponent {\r\n  constructor(public authService: AuthService, private router: Router) {}\r\n\r\n  logout() {\r\n    this.authService.logout();\r\n    this.router.navigate(['/login']); // Redireciona para login\r\n  }\r\n\r\n  login(): void {\r\n    this.router.navigate(['/login']); // Redireciona para a página de login\r\n  }\r\n\r\n  register(): void {\r\n    this.router.navigate(['/register']);\r\n  }\r\n}\r\n"
+                  }
+                ]
+              },
+              {
+                "type": "directory",
+                "name": "interceptors",
+                "path": "src\\app\\interceptors",
+                "ignored": false,
+                "children": [
+                  {
+                    "type": "file",
+                    "name": "auth.interceptor.spec.ts",
+                    "path": "src\\app\\interceptors\\auth.interceptor.spec.ts",
+                    "content": "import { TestBed } from '@angular/core/testing';\r\nimport { HttpInterceptorFn } from '@angular/common/http';\r\n\r\nimport { authInterceptor } from './auth.interceptor';\r\n\r\ndescribe('authInterceptor', () => {\r\n  const interceptor: HttpInterceptorFn = (req, next) => \r\n    TestBed.runInInjectionContext(() => authInterceptor(req, next));\r\n\r\n  beforeEach(() => {\r\n    TestBed.configureTestingModule({});\r\n  });\r\n\r\n  it('should be created', () => {\r\n    expect(interceptor).toBeTruthy();\r\n  });\r\n});\r\n"
+                  },
+                  {
+                    "type": "file",
+                    "name": "auth.interceptor.ts",
+                    "path": "src\\app\\interceptors\\auth.interceptor.ts",
+                    "content": "import {\r\n  HttpInterceptorFn,\r\n  HttpRequest,\r\n  HttpHandlerFn,\r\n  HttpEvent,\r\n} from '@angular/common/http';\r\nimport { inject } from '@angular/core';\r\nimport { Observable } from 'rxjs';\r\nimport { AuthService } from '../services/auth.service';\r\n\r\nexport const authInterceptor: HttpInterceptorFn = (\r\n  req: HttpRequest<any>,\r\n  next: HttpHandlerFn\r\n): Observable<HttpEvent<any>> => {\r\n  const authService = inject(AuthService);\r\n  const token = localStorage.getItem('authToken');\r\n  const loggedUser = localStorage.getItem('loggedUser');\r\n\r\n  if (token && loggedUser) {\r\n    const user = JSON.parse(loggedUser);\r\n    req = req.clone({\r\n      setHeaders: {\r\n        Authorization: `Bearer ${token}`,\r\n      },\r\n    });\r\n\r\n    if (!user || !user.username) {\r\n      console.warn('Usuário inconsistente ou não autenticado.');\r\n    }\r\n  }\r\n\r\n  return next(req);\r\n};\r\n"
+                  }
+                ]
+              },
+              {
+                "type": "directory",
+                "name": "pages",
+                "path": "src\\app\\pages",
+                "ignored": false,
+                "children": [
+                  {
+                    "type": "directory",
+                    "name": "home",
+                    "path": "src\\app\\pages\\home",
+                    "ignored": false,
+                    "children": [
+                      {
+                        "type": "file",
+                        "name": "home.component.html",
+                        "path": "src\\app\\pages\\home\\home.component.html",
+                        "content": "<div class=\"home-container\">\r\n  <div class=\"user-info\">\r\n    <div class=\"user-header\">\r\n      <img [src]=\"getUserImage(user?.image)\" alt=\"Foto do usuário\" *ngIf=\"user\" />\r\n      <div>\r\n        <h2>Bem-vindo, {{ capitalizeFirstLetter(user?.name) }}</h2>\r\n        <p class=\"username\">{{ capitalizeFirstLetter(user?.username) }}</p>\r\n      </div>\r\n    </div>\r\n    <p class=\"score\">Pontuação: <span>{{ user?.score }}</span></p>\r\n  </div>\r\n\r\n  <div class=\"user-list\">\r\n    <h2>Lista de Jogadores</h2>\r\n    <ul>\r\n      <li *ngFor=\"let otherUser of users\">\r\n        <div class=\"user-item\">\r\n          <img [src]=\"getUserImage(otherUser.image)\" alt=\"Foto de {{ otherUser.name }}\" />\r\n          <div>\r\n            <p>{{ capitalizeFirstLetter(otherUser.name) }}</p>\r\n            <p class=\"username\">{{ capitalizeFirstLetter(otherUser.username) }}</p>\r\n            <p class=\"score\">Pontuação: <span>{{ otherUser.score }}</span></p>\r\n          </div>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</div>\r\n"
+                      },
+                      {
+                        "type": "file",
+                        "name": "home.component.scss",
+                        "path": "src\\app\\pages\\home\\home.component.scss",
+                        "content": ".home-container {\r\n  display: flex;\r\n  gap: 20px;\r\n  padding: 20px;\r\n  background-color: #f4f4f4;\r\n  border-radius: 10px;\r\n}\r\n\r\n.user-info {\r\n  flex: 0 0 30%;\r\n  max-width: 300px;\r\n  padding: 20px;\r\n  background-color: #fff;\r\n  border-radius: 10px;\r\n  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  text-align: center;\r\n}\r\n\r\n.user-info img {\r\n  width: 100px;\r\n  height: 100px;\r\n  border-radius: 50%;\r\n  object-fit: cover;\r\n  margin-bottom: 10px;\r\n}\r\n\r\n.user-info h2 {\r\n  font-size: 1.5rem;\r\n  color: #333;\r\n  margin: 10px 0;\r\n}\r\n\r\n.user-info p {\r\n  font-size: 1rem;\r\n  color: #555;\r\n  margin: 5px 0;\r\n}\r\n\r\n.user-info .score {\r\n  font-size: 1.2rem;\r\n  color: #28a745;\r\n  font-weight: bold;\r\n}\r\n\r\n.user-list {\r\n  flex: 1;\r\n  max-width: 1000px;\r\n  padding: 20px;\r\n  background-color: #fff;\r\n  border-radius: 10px;\r\n  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);\r\n}\r\n\r\n.user-list h2 {\r\n  margin-bottom: 15px;\r\n  color: #333;\r\n  font-size: 1.5rem;\r\n  text-align: center;\r\n}\r\n\r\n.user-list ul {\r\n  list-style: none;\r\n  margin: 0;\r\n  padding: 0;\r\n}\r\n\r\n.user-item {\r\n  display: flex;\r\n  align-items: center;\r\n  gap: 15px;\r\n  padding: 10px;\r\n  margin-bottom: 10px;\r\n  background-color: #f9f9f9;\r\n  border-radius: 8px;\r\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);\r\n}\r\n\r\n.user-item img {\r\n  width: 60px;\r\n  height: 60px;\r\n  border-radius: 50%;\r\n  object-fit: cover;\r\n}\r\n\r\n.user-item p {\r\n  margin: 0;\r\n  color: #333;\r\n}\r\n\r\n.user-item .name {\r\n  font-size: 1rem;\r\n  font-weight: bold;\r\n  color: #333;\r\n}\r\n\r\n.user-item .score {\r\n  font-size: 1rem;\r\n  color: #28a745;\r\n  margin-left: auto;\r\n}\r\n"
+                      },
+                      {
+                        "type": "file",
+                        "name": "home.component.spec.ts",
+                        "path": "src\\app\\pages\\home\\home.component.spec.ts",
+                        "content": "import { ComponentFixture, TestBed } from '@angular/core/testing';\r\n\r\nimport { HomeComponent } from './home.component';\r\n\r\ndescribe('HomeComponent', () => {\r\n  let component: HomeComponent;\r\n  let fixture: ComponentFixture<HomeComponent>;\r\n\r\n  beforeEach(async () => {\r\n    await TestBed.configureTestingModule({\r\n      imports: [HomeComponent]\r\n    })\r\n    .compileComponents();\r\n\r\n    fixture = TestBed.createComponent(HomeComponent);\r\n    component = fixture.componentInstance;\r\n    fixture.detectChanges();\r\n  });\r\n\r\n  it('should create', () => {\r\n    expect(component).toBeTruthy();\r\n  });\r\n});\r\n"
+                      },
+                      {
+                        "type": "file",
+                        "name": "home.component.ts",
+                        "path": "src\\app\\pages\\home\\home.component.ts",
+                        "content": "import { Component, OnInit } from '@angular/core';\r\nimport { UserService } from '../../services/user.service';\r\nimport { AuthService } from '../../services/auth.service';\r\nimport { FormsModule } from '@angular/forms';\r\nimport { CommonModule } from '@angular/common';\r\n\r\n@Component({\r\n  selector: 'app-home',\r\n  templateUrl: './home.component.html',\r\n  standalone: true,\r\n  imports: [FormsModule, CommonModule],\r\n  styleUrl: './home.component.scss',\r\n})\r\nexport class HomeComponent implements OnInit {\r\n  user: any = null;\r\n  users: any[] = [];\r\n\r\n  constructor(private userService: UserService, private authService: AuthService) {}\r\n\r\n  ngOnInit(): void {\r\n    const token = this.authService.getToken();\r\n    if (token) {\r\n      const userId = this.decodeToken(token).sub;\r\n      this.fetchLoggedUser(userId);\r\n      this.fetchAllUsers();\r\n    }\r\n  }\r\n\r\n  fetchLoggedUser(userId: string): void {\r\n    this.userService.getUserById(userId).subscribe({\r\n      next: (user) => {\r\n        this.user = user;\r\n        console.log('Usuário logado retornado pelo backend:', this.user);\r\n      },\r\n      error: () => alert('Erro ao carregar informações do usuário logado'),\r\n    });\r\n  }\r\n\r\n  fetchAllUsers(): void {\r\n    this.userService.getAllUsers().subscribe({\r\n      next: (users) => {\r\n        this.users = users.filter((user) => user.id !== this.user?.id);\r\n        console.log('Lista de usuários recebida:', this.users);\r\n      },\r\n      error: () => alert('Erro ao carregar a lista de usuários'),\r\n    });\r\n  }\r\n\r\n  getUserImage(imagePath: string | null | undefined): string {\r\n    if (imagePath && !imagePath.startsWith('images/')) {\r\n      imagePath = `images/${imagePath}`;\r\n    }\r\n\r\n    const finalPath =\r\n      imagePath && imagePath.trim() !== ''\r\n        ? `http://localhost:3000/${imagePath}`\r\n        : 'http://localhost:3000/images/default.png';\r\n\r\n    return finalPath;\r\n  }\r\n\r\n  capitalizeFirstLetter(name: string): string {\r\n    if (!name) return '';\r\n    return name.charAt(0).toUpperCase() + name.slice(1);\r\n  }\r\n\r\n  decodeToken(token: string): any {\r\n    const payload = token.split('.')[1];\r\n    return JSON.parse(atob(payload));\r\n  }\r\n}\r\n"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "directory",
+                    "name": "login",
+                    "path": "src\\app\\pages\\login",
+                    "ignored": false,
+                    "children": [
+                      {
+                        "type": "file",
+                        "name": "login.component.html",
+                        "path": "src\\app\\pages\\login\\login.component.html",
+                        "content": "<div class=\"login-container\">\r\n  <h1>Login</h1>\r\n  <form (submit)=\"login()\">\r\n    <input\r\n      [(ngModel)]=\"credentials.username\"\r\n      name=\"username\"\r\n      placeholder=\"Usuário\"\r\n      required\r\n    />\r\n    <input\r\n      [(ngModel)]=\"credentials.password\"\r\n      name=\"password\"\r\n      type=\"password\"\r\n      placeholder=\"Senha\"\r\n      required\r\n    />\r\n    <button type=\"submit\">Entrar</button>\r\n  </form>\r\n</div>\r\n"
+                      },
+                      {
+                        "type": "file",
+                        "name": "login.component.scss",
+                        "path": "src\\app\\pages\\login\\login.component.scss",
+                        "content": ".login-container {\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: flex-start;\r\n  min-height: 100vh;\r\n  padding: 50px 20px;\r\n  background-color: #f4f4f4;\r\n  box-sizing: border-box;\r\n}\r\n\r\n.login-container h1 {\r\n  font-size: 2rem;\r\n  color: #333;\r\n  margin-bottom: 20px;\r\n  text-align: center;\r\n}\r\n\r\n.login-container form {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 15px;\r\n  width: 100%;\r\n  max-width: 400px;\r\n  padding: 20px;\r\n  background-color: #fff;\r\n  border-radius: 10px;\r\n  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);\r\n  box-sizing: border-box;\r\n}\r\n\r\n.login-container input {\r\n  width: 100%;\r\n  padding: 10px;\r\n  border: 1px solid #ddd;\r\n  border-radius: 5px;\r\n  font-size: 1rem;\r\n  color: #333;\r\n  box-sizing: border-box;\r\n}\r\n\r\n.login-container input:focus {\r\n  outline: none;\r\n  border-color: #28a745;\r\n  box-shadow: 0 0 5px rgba(40, 167, 69, 0.2);\r\n}\r\n\r\n.login-container button {\r\n  padding: 10px 20px;\r\n  font-size: 1rem;\r\n  color: #fff;\r\n  background-color: #28a745;\r\n  border: none;\r\n  border-radius: 5px;\r\n  cursor: pointer;\r\n  transition: background-color 0.3s;\r\n  align-self: center;\r\n}\r\n\r\n.login-container button:hover {\r\n  background-color: #218838;\r\n}\r\n\r\n.login-container button:active {\r\n  background-color: #1e7e34;\r\n}\r\n\r\n.login-container button:disabled {\r\n  background-color: #c3e6cb;\r\n  cursor: not-allowed;\r\n}\r\n\r\n/* Responsividade */\r\n@media (max-width: 768px) {\r\n  .login-container {\r\n    padding: 30px 10px;\r\n  }\r\n\r\n  .login-container h1 {\r\n    font-size: 1.8rem;\r\n  }\r\n\r\n  .login-container input {\r\n    font-size: 0.9rem;\r\n  }\r\n\r\n  .login-container button {\r\n    font-size: 0.9rem;\r\n  }\r\n}\r\n"
+                      },
+                      {
+                        "type": "file",
+                        "name": "login.component.spec.ts",
+                        "path": "src\\app\\pages\\login\\login.component.spec.ts",
+                        "content": "import { ComponentFixture, TestBed } from '@angular/core/testing';\r\n\r\nimport { LoginComponent } from './login.component';\r\n\r\ndescribe('LoginComponent', () => {\r\n  let component: LoginComponent;\r\n  let fixture: ComponentFixture<LoginComponent>;\r\n\r\n  beforeEach(async () => {\r\n    await TestBed.configureTestingModule({\r\n      imports: [LoginComponent]\r\n    })\r\n    .compileComponents();\r\n\r\n    fixture = TestBed.createComponent(LoginComponent);\r\n    component = fixture.componentInstance;\r\n    fixture.detectChanges();\r\n  });\r\n\r\n  it('should create', () => {\r\n    expect(component).toBeTruthy();\r\n  });\r\n});\r\n"
+                      },
+                      {
+                        "type": "file",
+                        "name": "login.component.ts",
+                        "path": "src\\app\\pages\\login\\login.component.ts",
+                        "content": "import { Component } from '@angular/core';\r\nimport { FormsModule } from '@angular/forms';\r\nimport { UserService } from '../../services/user.service';\r\nimport { Router } from '@angular/router';\r\n\r\n@Component({\r\n  selector: 'app-login',\r\n  styleUrl: './login.component.scss',\r\n  templateUrl: './login.component.html',\r\n  standalone: true,\r\n  imports: [FormsModule],\r\n})\r\nexport class LoginComponent {\r\n  credentials = { username: '', password: '' };\r\n\r\n  constructor(private userService: UserService, private router: Router) {}\r\n\r\n  login(): void {\r\n    if (!this.credentials.username || !this.credentials.password) {\r\n      alert('Por favor, preencha todos os campos.');\r\n      return;\r\n    }\r\n\r\n    this.userService.login(this.credentials).subscribe({\r\n      next: (response) => {\r\n        localStorage.setItem('authToken', response.accessToken);\r\n        localStorage.setItem('loggedUser', JSON.stringify(response.user));\r\n        this.router.navigate(['/home']);\r\n      },\r\n      error: (err) => alert(`Erro no login: ${err.error.message}`),\r\n    });\r\n  }\r\n\r\n}\r\n"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "directory",
+                    "name": "register",
+                    "path": "src\\app\\pages\\register",
+                    "ignored": false,
+                    "children": [
+                      {
+                        "type": "file",
+                        "name": "register.component.html",
+                        "path": "src\\app\\pages\\register\\register.component.html",
+                        "content": "<div class=\"register-container\">\r\n  <h1>Cadastro</h1>\r\n  <form (submit)=\"register()\">\r\n    <input [(ngModel)]=\"user.name\" name=\"name\" placeholder=\"Nome\" required />\r\n    <input [(ngModel)]=\"user.username\" name=\"username\" placeholder=\"Usuário\" required />\r\n    <input [(ngModel)]=\"user.password\" name=\"password\" type=\"password\" placeholder=\"Senha\" required />\r\n    <button type=\"submit\">Cadastrar</button>\r\n  </form>\r\n</div>\r\n"
+                      },
+                      {
+                        "type": "file",
+                        "name": "register.component.scss",
+                        "path": "src\\app\\pages\\register\\register.component.scss",
+                        "content": ".register-container {\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: flex-start;\r\n  min-height: 100vh;\r\n  padding: 50px 20px;\r\n  background-color: #f4f4f4;\r\n  box-sizing: border-box;\r\n}\r\n\r\n.register-container h1 {\r\n  font-size: 2rem;\r\n  color: #333;\r\n  margin-bottom: 20px;\r\n  text-align: center;\r\n}\r\n\r\n.register-container form {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 15px;\r\n  width: 100%;\r\n  max-width: 400px;\r\n  padding: 20px;\r\n  background-color: #fff;\r\n  border-radius: 10px;\r\n  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);\r\n  box-sizing: border-box;\r\n}\r\n\r\n.register-container input {\r\n  width: 100%;\r\n  padding: 10px;\r\n  border: 1px solid #ddd;\r\n  border-radius: 5px;\r\n  font-size: 1rem;\r\n  color: #333;\r\n  box-sizing: border-box;\r\n}\r\n\r\n.register-container input:focus {\r\n  outline: none;\r\n  border-color: #28a745;\r\n  box-shadow: 0 0 5px rgba(40, 167, 69, 0.2);\r\n}\r\n\r\n.register-container button {\r\n  padding: 10px 20px;\r\n  font-size: 1rem;\r\n  color: #fff;\r\n  background-color: #28a745;\r\n  border: none;\r\n  border-radius: 5px;\r\n  cursor: pointer;\r\n  transition: background-color 0.3s;\r\n  align-self: center;\r\n}\r\n\r\n.register-container button:hover {\r\n  background-color: #218838;\r\n}\r\n\r\n.register-container button:active {\r\n  background-color: #1e7e34;\r\n}\r\n\r\n.register-container button:disabled {\r\n  background-color: #c3e6cb;\r\n  cursor: not-allowed;\r\n}\r\n\r\n/* Responsividade */\r\n@media (max-width: 768px) {\r\n  .register-container {\r\n    padding: 30px 10px;\r\n  }\r\n\r\n  .register-container h1 {\r\n    font-size: 1.8rem;\r\n  }\r\n\r\n  .register-container input {\r\n    font-size: 0.9rem;\r\n  }\r\n\r\n  .register-container button {\r\n    font-size: 0.9rem;\r\n  }\r\n}\r\n"
+                      },
+                      {
+                        "type": "file",
+                        "name": "register.component.spec.ts",
+                        "path": "src\\app\\pages\\register\\register.component.spec.ts",
+                        "content": "import { ComponentFixture, TestBed } from '@angular/core/testing';\r\n\r\nimport { RegisterComponent } from './register.component';\r\n\r\ndescribe('RegisterComponent', () => {\r\n  let component: RegisterComponent;\r\n  let fixture: ComponentFixture<RegisterComponent>;\r\n\r\n  beforeEach(async () => {\r\n    await TestBed.configureTestingModule({\r\n      imports: [RegisterComponent]\r\n    })\r\n    .compileComponents();\r\n\r\n    fixture = TestBed.createComponent(RegisterComponent);\r\n    component = fixture.componentInstance;\r\n    fixture.detectChanges();\r\n  });\r\n\r\n  it('should create', () => {\r\n    expect(component).toBeTruthy();\r\n  });\r\n});\r\n"
+                      },
+                      {
+                        "type": "file",
+                        "name": "register.component.ts",
+                        "path": "src\\app\\pages\\register\\register.component.ts",
+                        "content": "import { Component, NgModule } from '@angular/core';\r\nimport { FormsModule } from '@angular/forms';\r\nimport { UserService } from '../../services/user.service';\r\nimport { Router } from '@angular/router';\r\n\r\n@Component({\r\n  selector: 'app-register',\r\n  standalone: true,\r\n  styleUrls: ['./register.component.scss'],\r\n  templateUrl: './register.component.html',\r\n  imports: [FormsModule,],\r\n})\r\n\r\n\r\nexport class RegisterComponent {\r\n  user = { name: '', username: '', password: '' };\r\n\r\n  constructor(private userService: UserService, private router: Router) {}\r\n\r\n  register(): void {\r\n    if (!this.user.name || !this.user.username || !this.user.password) {\r\n      alert('Por favor, preencha todos os campos.');\r\n      return;\r\n    }\r\n\r\n    this.userService.register(this.user).subscribe({\r\n      next: () => this.router.navigate(['/login']),\r\n      error: (err) => alert(err.error.message),\r\n    });\r\n  }\r\n}\r\n"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "directory",
+                "name": "services",
+                "path": "src\\app\\services",
+                "ignored": false,
+                "children": [
+                  {
+                    "type": "file",
+                    "name": "auth.service.spec.ts",
+                    "path": "src\\app\\services\\auth.service.spec.ts",
+                    "content": "import { TestBed } from '@angular/core/testing';\r\n\r\nimport { AuthService } from './auth.service';\r\n\r\ndescribe('AuthService', () => {\r\n  let service: AuthService;\r\n\r\n  beforeEach(() => {\r\n    TestBed.configureTestingModule({});\r\n    service = TestBed.inject(AuthService);\r\n  });\r\n\r\n  it('should be created', () => {\r\n    expect(service).toBeTruthy();\r\n  });\r\n});\r\n"
+                  },
+                  {
+                    "type": "file",
+                    "name": "auth.service.ts",
+                    "path": "src\\app\\services\\auth.service.ts",
+                    "content": "import { Injectable } from '@angular/core';\r\nimport { HttpClient } from '@angular/common/http';\r\nimport { Observable, tap } from 'rxjs';\r\n\r\n@Injectable({\r\n  providedIn: 'root',\r\n})\r\nexport class AuthService {\r\n  private apiUrl = '/api/auth';\r\n\r\n  constructor(private http: HttpClient) {}\r\n\r\n  login(username: string, password: string): Observable<any> {\r\n    return this.http.post(`${this.apiUrl}/sign-in`, { username, password }).pipe(\r\n      tap((response: any) => {\r\n        localStorage.setItem('authToken', response.accessToken);\r\n        localStorage.setItem('loggedUser', JSON.stringify(response.user));\r\n      }),\r\n    );\r\n  }\r\n\r\n  validateToken(): Observable<boolean> {\r\n    const token = localStorage.getItem('authToken');\r\n    if (!token) return new Observable((observer) => observer.next(false));\r\n\r\n    return this.http.post(`${this.apiUrl}/validate`, { token }).pipe(\r\n      tap((response: any) => {\r\n        if (!response.valid) {\r\n          this.logout();\r\n        }\r\n      }),\r\n    );\r\n  }\r\n\r\n  logout(): void {\r\n    localStorage.removeItem('authToken');\r\n    localStorage.removeItem('loggedUser');\r\n  }\r\n\r\n  getToken(): string | null {\r\n    return localStorage.getItem('authToken');\r\n  }\r\n\r\n  getLoggedUser(): any | null {\r\n    const user = localStorage.getItem('loggedUser');\r\n    return user ? JSON.parse(user) : null;\r\n  }\r\n}\r\n"
+                  },
+                  {
+                    "type": "file",
+                    "name": "user.service.spec.ts",
+                    "path": "src\\app\\services\\user.service.spec.ts",
+                    "content": "import { TestBed } from '@angular/core/testing';\r\n\r\nimport { UserService } from './user.service';\r\n\r\ndescribe('UserService', () => {\r\n  let service: UserService;\r\n\r\n  beforeEach(() => {\r\n    TestBed.configureTestingModule({});\r\n    service = TestBed.inject(UserService);\r\n  });\r\n\r\n  it('should be created', () => {\r\n    expect(service).toBeTruthy();\r\n  });\r\n});\r\n"
+                  },
+                  {
+                    "type": "file",
+                    "name": "user.service.ts",
+                    "path": "src\\app\\services\\user.service.ts",
+                    "content": "import { Injectable } from '@angular/core';\r\nimport { HttpClient } from '@angular/common/http';\r\nimport { Observable } from 'rxjs';\r\n\r\n@Injectable({\r\n  providedIn: 'root',\r\n})\r\nexport class UserService {\r\n  private apiUrl = '/api';\r\n\r\n  constructor(private http: HttpClient) {}\r\n\r\n  register(user: { name: string; username: string; password: string }): Observable<any> {\r\n    return this.http.post(`${this.apiUrl}/auth/sign-up`, user);\r\n  }\r\n\r\n  login(credentials: { username: string; password: string }): Observable<any> {\r\n    return this.http.post(`${this.apiUrl}/auth/sign-in`, credentials);\r\n  }\r\n\r\n  getUserById(id: string): Observable<any> {\r\n    return this.http.get(`${this.apiUrl}/users/${id}`);\r\n  }\r\n\r\n  getAllUsers(): Observable<any[]> {\r\n    return this.http.get<any[]>(`${this.apiUrl}/users`);\r\n  }\r\n}\r\n"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "file",
+            "name": "index.html",
+            "path": "src\\index.html",
+            "content": "<!doctype html>\r\n<html lang=\"en\">\r\n<head>\r\n  <meta charset=\"utf-8\">\r\n  <title>Jokenpo</title>\r\n  <base href=\"/\">\r\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n  <link rel=\"icon\" type=\"image/x-icon\" href=\"logo.png\">\r\n</head>\r\n<body>\r\n  <app-root></app-root>\r\n</body>\r\n</html>\r\n"
+          },
+          {
+            "type": "file",
+            "name": "main.ts",
+            "path": "src\\main.ts",
+            "content": "import { bootstrapApplication } from '@angular/platform-browser';\r\nimport { appConfig } from './app/app.config';\r\nimport { AppComponent } from './app/app.component';\r\n\r\nbootstrapApplication(AppComponent, appConfig)\r\n  .catch((err) => console.error(err));\r\n"
+          },
+          {
+            "type": "file",
+            "name": "styles.scss",
+            "path": "src\\styles.scss",
+            "content": "html, body {\r\n  margin: 0;\r\n  padding: 0;\r\n  background-color: #f4f4f4;\r\n}\r\n"
+          }
+        ]
+      },
+      {
+        "type": "file",
+        "name": "tsconfig.app.json",
+        "path": "tsconfig.app.json",
+        "content": "/* To learn more about Typescript configuration file: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html. */\r\n/* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */\r\n{\r\n  \"extends\": \"./tsconfig.json\",\r\n  \"compilerOptions\": {\r\n    \"outDir\": \"./out-tsc/app\",\r\n    \"types\": []\r\n  },\r\n  \"files\": [\r\n    \"src/main.ts\"\r\n  ],\r\n  \"include\": [\r\n    \"src/**/*.d.ts\"\r\n  ]\r\n}\r\n"
+      },
+      {
+        "type": "file",
+        "name": "tsconfig.json",
+        "path": "tsconfig.json",
+        "content": "/* To learn more about Typescript configuration file: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html. */\r\n/* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */\r\n{\r\n  \"compileOnSave\": false,\r\n  \"compilerOptions\": {\r\n    \"outDir\": \"./dist/out-tsc\",\r\n    \"strict\": true,\r\n    \"noImplicitOverride\": true,\r\n    \"noPropertyAccessFromIndexSignature\": true,\r\n    \"noImplicitReturns\": true,\r\n    \"noFallthroughCasesInSwitch\": true,\r\n    \"skipLibCheck\": true,\r\n    \"isolatedModules\": true,\r\n    \"esModuleInterop\": true,\r\n    \"sourceMap\": true,\r\n    \"declaration\": false,\r\n    \"experimentalDecorators\": true,\r\n    \"moduleResolution\": \"bundler\",\r\n    \"importHelpers\": true,\r\n    \"target\": \"ES2022\",\r\n    \"module\": \"ES2022\",\r\n    \"lib\": [\r\n      \"ES2022\",\r\n      \"dom\"\r\n    ]\r\n  },\r\n  \"angularCompilerOptions\": {\r\n    \"enableI18nLegacyMessageIdFormat\": false,\r\n    \"strictInjectionParameters\": true,\r\n    \"strictInputAccessModifiers\": true,\r\n    \"strictTemplates\": true\r\n  }\r\n}\r\n"
+      },
+      {
+        "type": "file",
+        "name": "tsconfig.spec.json",
+        "path": "tsconfig.spec.json",
+        "content": "/* To learn more about Typescript configuration file: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html. */\r\n/* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */\r\n{\r\n  \"extends\": \"./tsconfig.json\",\r\n  \"compilerOptions\": {\r\n    \"outDir\": \"./out-tsc/spec\",\r\n    \"types\": [\r\n      \"jasmine\"\r\n    ]\r\n  },\r\n  \"include\": [\r\n    \"src/**/*.spec.ts\",\r\n    \"src/**/*.d.ts\"\r\n  ]\r\n}\r\n"
+      }
+    ]
+  }
+}

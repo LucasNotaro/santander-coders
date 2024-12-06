@@ -1,0 +1,1380 @@
+jokenpo\.editorconfig
+# Editor configuration, see https://editorconfig.org
+root = true
+
+[*]
+charset = utf-8
+indent_style = space
+indent_size = 2
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.ts]
+quote_type = single
+ij_typescript_use_double_quotes = false
+
+[*.md]
+max_line_length = off
+trim_trailing_whitespace = false
+
+
+jokenpo\.gitignore
+jokenpo\a.js
+jokenpo\angular.json
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "jokenpo": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/jokenpo",
+            "index": "src/index.html",
+            "browser": "src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "public"
+              }
+            ],
+            "styles": [
+              "src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kB",
+                  "maximumError": "4kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "options": {
+            "proxyConfig": "proxy.conf.json"
+            },
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "jokenpo:build:production"
+            },
+            "development": {
+              "buildTarget": "jokenpo:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "public"
+              }
+            ],
+            "styles": [
+              "src/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    }
+  }
+}
+
+
+jokenpo\b2.js
+jokenpo\package-lock.json
+jokenpo\package.json
+{
+  "name": "jokenpo",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^18.2.0",
+    "@angular/common": "^18.2.13",
+    "@angular/compiler": "^18.2.0",
+    "@angular/core": "^18.2.0",
+    "@angular/forms": "^18.2.13",
+    "@angular/platform-browser": "^18.2.13",
+    "@angular/platform-browser-dynamic": "^18.2.13",
+    "@angular/router": "^18.2.0",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.14.10"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^18.2.11",
+    "@angular/cli": "^18.2.11",
+    "@angular/compiler-cli": "^18.2.0",
+    "@types/jasmine": "~5.1.0",
+    "jasmine-core": "~5.2.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.2.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.1.0",
+    "typescript": "~5.5.2"
+  }
+}
+
+
+jokenpo\proxy.conf.json
+{
+  "/api": {
+    "target": "http://localhost:3000",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/api": ""
+    }
+  }
+}
+
+
+jokenpo\public\favicon.ico
+jokenpo\public\logo.png
+jokenpo\README.md
+# Jokenpo
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.11.
+
+## Development server
+
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+
+## Code scaffolding
+
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+
+## Build
+
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+
+## Running unit tests
+
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+## Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+
+jokenpo\src\app\app.component.html
+<app-header></app-header>
+<router-outlet></router-outlet>
+
+
+jokenpo\src\app\app.component.scss
+jokenpo\src\app\app.component.spec.ts
+import { TestBed } from '@angular/core/testing';
+import { AppComponent } from './app.component';
+
+describe('AppComponent', () => {
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [AppComponent],
+    }).compileComponents();
+  });
+
+  it('should create the app', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    expect(app).toBeTruthy();
+  });
+
+  it(`should have the 'jokenpo' title`, () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    expect(app.title).toEqual('jokenpo');
+  });
+
+  it('should render title', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, jokenpo');
+  });
+});
+
+
+jokenpo\src\app\app.component.ts
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from './services/auth.service';
+import { RouterOutlet } from '@angular/router';
+import { HeaderComponent } from './header/header.component';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [RouterOutlet, HeaderComponent],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.scss'
+})
+
+export class AppComponent implements OnInit {
+  title = 'jokenpo';
+  constructor(private authService: AuthService) {}
+
+  ngOnInit(): void {
+    this.authService.validateToken().subscribe((isValid) => {
+      if (!isValid) {
+        console.log('Token inválido ou expirado!');
+      }
+    });
+  }
+}
+
+
+jokenpo\src\app\app.config.ts
+import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
+import { provideRouter } from '@angular/router';
+import { provideHttpClient, withInterceptors} from '@angular/common/http';
+import { routes } from './app.routes';
+import { authInterceptor } from './interceptors/auth.interceptor';
+
+
+export const appConfig: ApplicationConfig = {
+  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes), provideHttpClient(withInterceptors([authInterceptor])),]
+};
+
+
+jokenpo\src\app\app.routes.ts
+import { Routes } from '@angular/router';
+import { RegisterComponent } from './pages/register/register.component';
+import { LoginComponent } from './pages/login/login.component';
+import { AuthGuard } from './guards/auth.guard';
+import { HomeComponent } from './pages/home/home.component';
+
+export const routes: Routes = [
+  { path: '', redirectTo: 'register', pathMatch: 'full' },
+  { path: 'register', component: RegisterComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
+];
+
+
+jokenpo\src\app\guards\auth.guard.spec.ts
+import { TestBed } from '@angular/core/testing';
+import { CanActivateFn } from '@angular/router';
+
+import { authGuard } from './auth.guard';
+
+describe('authGuard', () => {
+  const executeGuard: CanActivateFn = (...guardParameters) => 
+      TestBed.runInInjectionContext(() => authGuard(...guardParameters));
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({});
+  });
+
+  it('should be created', () => {
+    expect(executeGuard).toBeTruthy();
+  });
+});
+
+
+jokenpo\src\app\guards\auth.guard.ts
+import { Injectable } from '@angular/core';
+import { CanActivate, Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class AuthGuard implements CanActivate {
+  constructor(private authService: AuthService, private router: Router) {}
+
+  canActivate(): Observable<boolean> {
+    return this.authService.validateToken().pipe(
+      map((isValid) => {
+        if (!isValid) {
+          alert('Sessão expirada! Faça login novamente.');
+          this.router.navigate(['/login']);
+        }
+        return isValid;
+      }),
+    );
+  }
+}
+
+
+jokenpo\src\app\header\header.component.html
+<nav class="header-container">
+  <div class="logo" >
+    <a [routerLink]="['/home']">
+      <img src="logo.png" alt="Logo da Plataforma" />
+    </a>
+
+    <a [routerLink]="['/home']" class="platform-name">Jokenpô Arena</a>
+  </div>
+  <div class="user-actions">
+    <button *ngIf="authService.getToken()" class="logout-btn" (click)="logout()">Logout</button>
+    <button *ngIf="!authService.getToken()" class="login-btn" (click)="login()">Login</button>
+    <button *ngIf="!authService.getToken()" class="register-btn" (click)="register()">Cadastro</button>
+  </div>
+</nav>
+
+
+jokenpo\src\app\header\header.component.scss
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background-color: #1a1a2e;
+  color: white;
+  font-family: 'Arial', sans-serif;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+
+    img {
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .platform-name {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #ffcc00;
+    }
+  }
+
+  .user-actions {
+    display: flex;
+    align-items: center;
+
+    .logout-btn,
+    .login-btn {
+      background-color: #ff4c4c;
+      border: none;
+      color: white;
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #cc0000;
+      }
+    }
+
+    .login-btn {
+      background-color: #4caf50;
+
+      &:hover {
+        background-color: #388e3c;
+      }
+    }
+  }
+
+  .register-btn {
+    background-color: #007bff; /* Azul para o botão de cadastro */
+    border: none;
+    color: white;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: 10px;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+
+    &:active {
+      background-color: #003f7f;
+    }
+  }
+
+}
+
+
+jokenpo\src\app\header\header.component.spec.ts
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { HeaderComponent } from './header.component';
+
+describe('HeaderComponent', () => {
+  let component: HeaderComponent;
+  let fixture: ComponentFixture<HeaderComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [HeaderComponent]
+    })
+    .compileComponents();
+
+    fixture = TestBed.createComponent(HeaderComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
+
+
+jokenpo\src\app\header\header.component.ts
+import { Component } from '@angular/core';
+import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+
+
+@Component({
+  standalone: true,
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  imports: [CommonModule, RouterModule],
+  styleUrl: './header.component.scss'
+})
+
+export class HeaderComponent {
+  constructor(public authService: AuthService, private router: Router) {}
+
+  logout() {
+    this.authService.logout();
+    this.router.navigate(['/login']); // Redireciona para login
+  }
+
+  login(): void {
+    this.router.navigate(['/login']); // Redireciona para a página de login
+  }
+
+  register(): void {
+    this.router.navigate(['/register']);
+  }
+}
+
+
+jokenpo\src\app\interceptors\auth.interceptor.spec.ts
+import { TestBed } from '@angular/core/testing';
+import { HttpInterceptorFn } from '@angular/common/http';
+
+import { authInterceptor } from './auth.interceptor';
+
+describe('authInterceptor', () => {
+  const interceptor: HttpInterceptorFn = (req, next) => 
+    TestBed.runInInjectionContext(() => authInterceptor(req, next));
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({});
+  });
+
+  it('should be created', () => {
+    expect(interceptor).toBeTruthy();
+  });
+});
+
+
+jokenpo\src\app\interceptors\auth.interceptor.ts
+import {
+  HttpInterceptorFn,
+  HttpRequest,
+  HttpHandlerFn,
+  HttpEvent,
+} from '@angular/common/http';
+import { inject } from '@angular/core';
+import { Observable } from 'rxjs';
+import { AuthService } from '../services/auth.service';
+
+export const authInterceptor: HttpInterceptorFn = (
+  req: HttpRequest<any>,
+  next: HttpHandlerFn
+): Observable<HttpEvent<any>> => {
+  const authService = inject(AuthService);
+  const token = localStorage.getItem('authToken');
+  const loggedUser = localStorage.getItem('loggedUser');
+
+  if (token && loggedUser) {
+    const user = JSON.parse(loggedUser);
+    req = req.clone({
+      setHeaders: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    if (!user || !user.username) {
+      console.warn('Usuário inconsistente ou não autenticado.');
+    }
+  }
+
+  return next(req);
+};
+
+
+jokenpo\src\app\pages\home\home.component.html
+<div class="home-container">
+  <div class="user-info">
+    <div class="user-header">
+      <img [src]="getUserImage(user?.image)" alt="Foto do usuário" *ngIf="user" />
+      <div>
+        <h2>Bem-vindo, {{ capitalizeFirstLetter(user?.name) }}</h2>
+        <p class="username">{{ capitalizeFirstLetter(user?.username) }}</p>
+      </div>
+    </div>
+    <p class="score">Pontuação: <span>{{ user?.score }}</span></p>
+  </div>
+
+  <div class="user-list">
+    <h2>Lista de Jogadores</h2>
+    <ul>
+      <li *ngFor="let otherUser of users">
+        <div class="user-item">
+          <img [src]="getUserImage(otherUser.image)" alt="Foto de {{ otherUser.name }}" />
+          <div>
+            <p>{{ capitalizeFirstLetter(otherUser.name) }}</p>
+            <p class="username">{{ capitalizeFirstLetter(otherUser.username) }}</p>
+            <p class="score">Pontuação: <span>{{ otherUser.score }}</span></p>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+jokenpo\src\app\pages\home\home.component.scss
+.home-container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+}
+
+.user-info {
+  flex: 0 0 30%;
+  max-width: 300px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.user-info img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.user-info h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin: 10px 0;
+}
+
+.user-info p {
+  font-size: 1rem;
+  color: #555;
+  margin: 5px 0;
+}
+
+.user-info .score {
+  font-size: 1.2rem;
+  color: #28a745;
+  font-weight: bold;
+}
+
+.user-list {
+  flex: 1;
+  max-width: 1000px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.user-list h2 {
+  margin-bottom: 15px;
+  color: #333;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.user-list ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.user-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.user-item img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-item p {
+  margin: 0;
+  color: #333;
+}
+
+.user-item .name {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.user-item .score {
+  font-size: 1rem;
+  color: #28a745;
+  margin-left: auto;
+}
+
+
+jokenpo\src\app\pages\home\home.component.spec.ts
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { HomeComponent } from './home.component';
+
+describe('HomeComponent', () => {
+  let component: HomeComponent;
+  let fixture: ComponentFixture<HomeComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [HomeComponent]
+    })
+    .compileComponents();
+
+    fixture = TestBed.createComponent(HomeComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
+
+
+jokenpo\src\app\pages\home\home.component.ts
+import { Component, OnInit } from '@angular/core';
+import { UserService } from '../../services/user.service';
+import { AuthService } from '../../services/auth.service';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+
+@Component({
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  standalone: true,
+  imports: [FormsModule, CommonModule],
+  styleUrl: './home.component.scss',
+})
+export class HomeComponent implements OnInit {
+  user: any = null;
+  users: any[] = [];
+
+  constructor(private userService: UserService, private authService: AuthService) {}
+
+  ngOnInit(): void {
+    const token = this.authService.getToken();
+    if (token) {
+      const userId = this.decodeToken(token).sub;
+      this.fetchLoggedUser(userId);
+      this.fetchAllUsers();
+    }
+  }
+
+  fetchLoggedUser(userId: string): void {
+    this.userService.getUserById(userId).subscribe({
+      next: (user) => {
+        this.user = user;
+        console.log('Usuário logado retornado pelo backend:', this.user);
+      },
+      error: () => alert('Erro ao carregar informações do usuário logado'),
+    });
+  }
+
+  fetchAllUsers(): void {
+    this.userService.getAllUsers().subscribe({
+      next: (users) => {
+        this.users = users.filter((user) => user.id !== this.user?.id);
+        console.log('Lista de usuários recebida:', this.users);
+      },
+      error: () => alert('Erro ao carregar a lista de usuários'),
+    });
+  }
+
+  getUserImage(imagePath: string | null | undefined): string {
+    if (imagePath && !imagePath.startsWith('images/')) {
+      imagePath = `images/${imagePath}`;
+    }
+
+    const finalPath =
+      imagePath && imagePath.trim() !== ''
+        ? `http://localhost:3000/${imagePath}`
+        : 'http://localhost:3000/images/default.png';
+
+    return finalPath;
+  }
+
+  capitalizeFirstLetter(name: string): string {
+    if (!name) return '';
+    return name.charAt(0).toUpperCase() + name.slice(1);
+  }
+
+  decodeToken(token: string): any {
+    const payload = token.split('.')[1];
+    return JSON.parse(atob(payload));
+  }
+}
+
+
+jokenpo\src\app\pages\login\login.component.html
+<div class="login-container">
+  <h1>Login</h1>
+  <form (submit)="login()">
+    <input
+      [(ngModel)]="credentials.username"
+      name="username"
+      placeholder="Usuário"
+      required
+    />
+    <input
+      [(ngModel)]="credentials.password"
+      name="password"
+      type="password"
+      placeholder="Senha"
+      required
+    />
+    <button type="submit">Entrar</button>
+  </form>
+</div>
+
+
+jokenpo\src\app\pages\login\login.component.scss
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding: 50px 20px;
+  background-color: #f4f4f4;
+  box-sizing: border-box;
+}
+
+.login-container h1 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.login-container input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #333;
+  box-sizing: border-box;
+}
+
+.login-container input:focus {
+  outline: none;
+  border-color: #28a745;
+  box-shadow: 0 0 5px rgba(40, 167, 69, 0.2);
+}
+
+.login-container button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #28a745;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  align-self: center;
+}
+
+.login-container button:hover {
+  background-color: #218838;
+}
+
+.login-container button:active {
+  background-color: #1e7e34;
+}
+
+.login-container button:disabled {
+  background-color: #c3e6cb;
+  cursor: not-allowed;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .login-container {
+    padding: 30px 10px;
+  }
+
+  .login-container h1 {
+    font-size: 1.8rem;
+  }
+
+  .login-container input {
+    font-size: 0.9rem;
+  }
+
+  .login-container button {
+    font-size: 0.9rem;
+  }
+}
+
+
+jokenpo\src\app\pages\login\login.component.spec.ts
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { LoginComponent } from './login.component';
+
+describe('LoginComponent', () => {
+  let component: LoginComponent;
+  let fixture: ComponentFixture<LoginComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [LoginComponent]
+    })
+    .compileComponents();
+
+    fixture = TestBed.createComponent(LoginComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
+
+
+jokenpo\src\app\pages\login\login.component.ts
+import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { UserService } from '../../services/user.service';
+import { Router } from '@angular/router';
+
+@Component({
+  selector: 'app-login',
+  styleUrl: './login.component.scss',
+  templateUrl: './login.component.html',
+  standalone: true,
+  imports: [FormsModule],
+})
+export class LoginComponent {
+  credentials = { username: '', password: '' };
+
+  constructor(private userService: UserService, private router: Router) {}
+
+  login(): void {
+    if (!this.credentials.username || !this.credentials.password) {
+      alert('Por favor, preencha todos os campos.');
+      return;
+    }
+
+    this.userService.login(this.credentials).subscribe({
+      next: (response) => {
+        localStorage.setItem('authToken', response.accessToken);
+        localStorage.setItem('loggedUser', JSON.stringify(response.user));
+        this.router.navigate(['/home']);
+      },
+      error: (err) => alert(`Erro no login: ${err.error.message}`),
+    });
+  }
+
+}
+
+
+jokenpo\src\app\pages\register\register.component.html
+<div class="register-container">
+  <h1>Cadastro</h1>
+  <form (submit)="register()">
+    <input [(ngModel)]="user.name" name="name" placeholder="Nome" required />
+    <input [(ngModel)]="user.username" name="username" placeholder="Usuário" required />
+    <input [(ngModel)]="user.password" name="password" type="password" placeholder="Senha" required />
+    <button type="submit">Cadastrar</button>
+  </form>
+</div>
+
+
+jokenpo\src\app\pages\register\register.component.scss
+.register-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding: 50px 20px;
+  background-color: #f4f4f4;
+  box-sizing: border-box;
+}
+
+.register-container h1 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.register-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.register-container input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #333;
+  box-sizing: border-box;
+}
+
+.register-container input:focus {
+  outline: none;
+  border-color: #28a745;
+  box-shadow: 0 0 5px rgba(40, 167, 69, 0.2);
+}
+
+.register-container button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #28a745;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  align-self: center;
+}
+
+.register-container button:hover {
+  background-color: #218838;
+}
+
+.register-container button:active {
+  background-color: #1e7e34;
+}
+
+.register-container button:disabled {
+  background-color: #c3e6cb;
+  cursor: not-allowed;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .register-container {
+    padding: 30px 10px;
+  }
+
+  .register-container h1 {
+    font-size: 1.8rem;
+  }
+
+  .register-container input {
+    font-size: 0.9rem;
+  }
+
+  .register-container button {
+    font-size: 0.9rem;
+  }
+}
+
+
+jokenpo\src\app\pages\register\register.component.spec.ts
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { RegisterComponent } from './register.component';
+
+describe('RegisterComponent', () => {
+  let component: RegisterComponent;
+  let fixture: ComponentFixture<RegisterComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [RegisterComponent]
+    })
+    .compileComponents();
+
+    fixture = TestBed.createComponent(RegisterComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
+
+
+jokenpo\src\app\pages\register\register.component.ts
+import { Component, NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { UserService } from '../../services/user.service';
+import { Router } from '@angular/router';
+
+@Component({
+  selector: 'app-register',
+  standalone: true,
+  styleUrls: ['./register.component.scss'],
+  templateUrl: './register.component.html',
+  imports: [FormsModule,],
+})
+
+
+export class RegisterComponent {
+  user = { name: '', username: '', password: '' };
+
+  constructor(private userService: UserService, private router: Router) {}
+
+  register(): void {
+    if (!this.user.name || !this.user.username || !this.user.password) {
+      alert('Por favor, preencha todos os campos.');
+      return;
+    }
+
+    this.userService.register(this.user).subscribe({
+      next: () => this.router.navigate(['/login']),
+      error: (err) => alert(err.error.message),
+    });
+  }
+}
+
+
+jokenpo\src\app\services\auth.service.spec.ts
+import { TestBed } from '@angular/core/testing';
+
+import { AuthService } from './auth.service';
+
+describe('AuthService', () => {
+  let service: AuthService;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({});
+    service = TestBed.inject(AuthService);
+  });
+
+  it('should be created', () => {
+    expect(service).toBeTruthy();
+  });
+});
+
+
+jokenpo\src\app\services\auth.service.ts
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable, tap } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class AuthService {
+  private apiUrl = '/api/auth';
+
+  constructor(private http: HttpClient) {}
+
+  login(username: string, password: string): Observable<any> {
+    return this.http.post(`${this.apiUrl}/sign-in`, { username, password }).pipe(
+      tap((response: any) => {
+        localStorage.setItem('authToken', response.accessToken);
+        localStorage.setItem('loggedUser', JSON.stringify(response.user));
+      }),
+    );
+  }
+
+  validateToken(): Observable<boolean> {
+    const token = localStorage.getItem('authToken');
+    if (!token) return new Observable((observer) => observer.next(false));
+
+    return this.http.post(`${this.apiUrl}/validate`, { token }).pipe(
+      tap((response: any) => {
+        if (!response.valid) {
+          this.logout();
+        }
+      }),
+    );
+  }
+
+  logout(): void {
+    localStorage.removeItem('authToken');
+    localStorage.removeItem('loggedUser');
+  }
+
+  getToken(): string | null {
+    return localStorage.getItem('authToken');
+  }
+
+  getLoggedUser(): any | null {
+    const user = localStorage.getItem('loggedUser');
+    return user ? JSON.parse(user) : null;
+  }
+}
+
+
+jokenpo\src\app\services\user.service.spec.ts
+import { TestBed } from '@angular/core/testing';
+
+import { UserService } from './user.service';
+
+describe('UserService', () => {
+  let service: UserService;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({});
+    service = TestBed.inject(UserService);
+  });
+
+  it('should be created', () => {
+    expect(service).toBeTruthy();
+  });
+});
+
+
+jokenpo\src\app\services\user.service.ts
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class UserService {
+  private apiUrl = '/api';
+
+  constructor(private http: HttpClient) {}
+
+  register(user: { name: string; username: string; password: string }): Observable<any> {
+    return this.http.post(`${this.apiUrl}/auth/sign-up`, user);
+  }
+
+  login(credentials: { username: string; password: string }): Observable<any> {
+    return this.http.post(`${this.apiUrl}/auth/sign-in`, credentials);
+  }
+
+  getUserById(id: string): Observable<any> {
+    return this.http.get(`${this.apiUrl}/users/${id}`);
+  }
+
+  getAllUsers(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/users`);
+  }
+}
+
+
+jokenpo\src\index.html
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Jokenpo</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="logo.png">
+</head>
+<body>
+  <app-root></app-root>
+</body>
+</html>
+
+
+jokenpo\src\main.ts
+import { bootstrapApplication } from '@angular/platform-browser';
+import { appConfig } from './app/app.config';
+import { AppComponent } from './app/app.component';
+
+bootstrapApplication(AppComponent, appConfig)
+  .catch((err) => console.error(err));
+
+
+jokenpo\src\styles.scss
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+
+jokenpo\tsconfig.app.json
+/* To learn more about Typescript configuration file: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html. */
+/* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./out-tsc/app",
+    "types": []
+  },
+  "files": [
+    "src/main.ts"
+  ],
+  "include": [
+    "src/**/*.d.ts"
+  ]
+}
+
+
+jokenpo\tsconfig.json
+/* To learn more about Typescript configuration file: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html. */
+/* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "outDir": "./dist/out-tsc",
+    "strict": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "declaration": false,
+    "experimentalDecorators": true,
+    "moduleResolution": "bundler",
+    "importHelpers": true,
+    "target": "ES2022",
+    "module": "ES2022",
+    "lib": [
+      "ES2022",
+      "dom"
+    ]
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
+  }
+}
+
+
+jokenpo\tsconfig.spec.json
+/* To learn more about Typescript configuration file: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html. */
+/* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./out-tsc/spec",
+    "types": [
+      "jasmine"
+    ]
+  },
+  "include": [
+    "src/**/*.spec.ts",
+    "src/**/*.d.ts"
+  ]
+}
+
+

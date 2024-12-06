@@ -1,0 +1,14 @@
+<nav class="header-container">
+  <div class="logo" >
+    <a [routerLink]="['/home']">
+      <img src="logo.png" alt="Logo da Plataforma" />
+    </a>
+
+    <a [routerLink]="['/home']" class="platform-name">Jokenpô Arena</a>
+  </div>
+  <div class="user-actions">
+    <button *ngIf="authService.getToken()" class="logout-btn" (click)="logout()">Logout</button>
+    <button *ngIf="!authService.getToken()" class="login-btn" (click)="login()">Login</button>
+    <button *ngIf="!authService.getToken()" class="register-btn" (click)="register()">Cadastro</button>
+  </div>
+</nav>

@@ -1,0 +1,80 @@
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background-color: #1a1a2e;
+  color: white;
+  font-family: 'Arial', sans-serif;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+
+    img {
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .platform-name {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #ffcc00;
+    }
+  }
+
+  .user-actions {
+    display: flex;
+    align-items: center;
+
+    .logout-btn,
+    .login-btn {
+      background-color: #ff4c4c;
+      border: none;
+      color: white;
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #cc0000;
+      }
+    }
+
+    .login-btn {
+      background-color: #4caf50;
+
+      &:hover {
+        background-color: #388e3c;
+      }
+    }
+  }
+
+  .register-btn {
+    background-color: #007bff; /* Azul para o botão de cadastro */
+    border: none;
+    color: white;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: 10px;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+
+    &:active {
+      background-color: #003f7f;
+    }
+  }
+
+}

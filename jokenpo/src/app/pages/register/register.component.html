@@ -1,0 +1,9 @@
+<div class="register-container">
+  <h1>Cadastro</h1>
+  <form (submit)="register()">
+    <input [(ngModel)]="user.name" name="name" placeholder="Nome" required />
+    <input [(ngModel)]="user.username" name="username" placeholder="Usuário" required />
+    <input [(ngModel)]="user.password" name="password" type="password" placeholder="Senha" required />
+    <button type="submit">Cadastrar</button>
+  </form>
+</div>
